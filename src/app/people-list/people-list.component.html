@@ -1,0 +1,14 @@
+<md-sidenav-container>
+    <md-list>
+        <h3 md-subheader>People</h3>
+        <md-list-item *ngFor="let person of people" (click)="selectPerson(person)">
+            <md-icon md-list-avatar>folder</md-icon>
+            <h4 md-line>{{person.name}}</h4>
+            <p md-line> {{person.firstname}} </p>
+            <a (click)="sidenav.toggle()">OPEN</a>
+        </md-list-item>
+    </md-list>
+    <md-sidenav #sidenav mode="side" align="end">
+            <person *ngIf="hasPerson()" [person]="person"></person>
+    </md-sidenav>
+</md-sidenav-container>

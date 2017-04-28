@@ -1,0 +1,13 @@
+<div *ngIf="isEditor">
+        <input type="text" [ngModel]="person.name">
+        <button md-button>LIKE</button>
+        <button md-button (click)="switchEditor()">EDITER</button>
+</div>
+<div *ngIf="!isEditor">
+        <md-card-title>{{ person?.name + " " + person?.firstname }}</md-card-title>
+        <md-card-subtitle>Né le </md-card-subtitle>
+    <img md-card-image src="assets/img/examples/shiba2.jpg">
+
+        <button md-button>LIKE</button>
+        <button md-button (click)="switchEditor()">EDITER</button>
+</div>
